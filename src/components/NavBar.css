@@ -1,0 +1,17 @@
+.Navegador{
+    display: flex;
+    background-color: yellow;
+    color:steelblue;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 50pc;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+ul li{
+    list-style-type: none;
+}
