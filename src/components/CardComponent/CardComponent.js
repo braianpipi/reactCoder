@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText} from 'reactstrap';
 
 const CardComponent = ({nombre, precio, descripcion, img}) => {
-  <div>
+  return (<div>
 
     <Card>
       <CardImg
@@ -26,6 +26,6 @@ const CardComponent = ({nombre, precio, descripcion, img}) => {
       </CardBody>
     </Card>
           </div>
-}
+  )}
 
 export default CardComponent;
