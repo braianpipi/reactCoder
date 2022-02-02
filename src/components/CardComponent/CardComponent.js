@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText} from 'reactstrap';
 
-const CardComponents = ({nombre, precio, descripcion, valor, img}) => {
+const CardComponent = ({nombre, precio, descripcion, img}) => {
   <div>
 
     <Card>
@@ -23,12 +23,9 @@ const CardComponents = ({nombre, precio, descripcion, valor, img}) => {
         <CardText>
           {descripcion}
           </CardText>
-                  <CardText>
-          {valor}
-          </CardText>
       </CardBody>
     </Card>
           </div>
 }
 
-export default CardComponents;
+export default CardComponent;
