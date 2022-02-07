@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button} from 'reactstrap';
+import ItemCount from "../../ItemCount";
 
 const ItemListContainer = ({nombre, precio, descripcion, img, stock}) => {
   return (<div>
@@ -8,7 +9,7 @@ const ItemListContainer = ({nombre, precio, descripcion, img, stock}) => {
       <CardImg
         alt="Card image cap"
         src={img}
-        width="100%"
+        width="20px"
         />
       <CardBody>
         <CardTitle tag="h5">
@@ -23,15 +24,8 @@ const ItemListContainer = ({nombre, precio, descripcion, img, stock}) => {
         <CardText>
           {descripcion}
           </CardText>
-                  <CardText>
-          {stock}
-          </CardText>
-          <Button>
-        Button
-      </Button>
-      <Button>
-        Button
-      </Button>
+
+        <ItemCount/>
       </CardBody>
     </Card>
           </div>
