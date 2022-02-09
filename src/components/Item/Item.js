@@ -1,28 +1,27 @@
-import React from "react";
+import React from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText} from 'reactstrap';
-import ItemCount from "../../ItemCount";
+import ItemCount from '../../ItemCount';
 
-const ItemListContainer = ({nombre, precio, descripcion, img}) => {
+const Item = ({data}) => {
   return (<div>
-
     <Card>
       <CardImg
         alt="Card image cap"
-        src={img}
+        src={data.image}
         width="20px"
         />
       <CardBody>
         <CardTitle tag="h5">
-          {nombre}
+          {data.title}
         </CardTitle>
         <CardSubtitle
           className="mb-2 text-muted"
           tag="h6"
         >
-          {precio}
+          {data.price}$
         </CardSubtitle>
         <CardText>
-          {descripcion}
+          {data.description}
           </CardText>
 
         <ItemCount/>
@@ -31,4 +30,4 @@ const ItemListContainer = ({nombre, precio, descripcion, img}) => {
           </div>
   )}
 
-export default ItemListContainer;
+export default Item;

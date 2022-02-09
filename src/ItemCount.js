@@ -11,7 +11,7 @@ const ItemCount = () => {
     const onAdd = () =>{
         if(initialStock > counter){
         
-            return setCounter(counter + 1 ) ,setStock(stock -1);
+            return (setCounter(counter + 1 )) && (setStock(stock -1));
         }else{
             alert ("Por el momento no contamos con mas Stock! Muchas Gracias!")
         }
@@ -19,7 +19,7 @@ const ItemCount = () => {
     const onLess = () =>{
         if(counter > 0 ){
 
-            return setCounter(counter - 1 ), setStock(stock + 1)
+            return (setCounter(counter - 1 )) && (setStock(stock + 1))
         }else{
             alert("Haz quitado todos los elementos")
         }

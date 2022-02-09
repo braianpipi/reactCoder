@@ -4,8 +4,9 @@ import "./style.css";
 import Header from "./components/Header/Header";
 // import CardComponent from "./components/CardComponent/CardComponent";
 // import NavBar from "./components/Navbar";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-
+// import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+// import ItemCount from "./ItemCount";
+import ItemList from "./components/ItemList/ItemList";
 class App extends Component {
   // constructor(){
   //   super();
@@ -28,20 +29,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <ItemListContainer
-          nombre="Futuro Producto"
-          precio="Valor"
-          descripcion="saraza"
-          img="https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png.webp"
-
-        />
-        <ItemListContainer
-          nombre="Futuro Producto"
-          precio="Valor"
-          descripcion="saraza"
-          img="https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png.webp"
-
-        />
+        <ItemList />
 
       </div>
     );

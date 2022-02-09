@@ -10,8 +10,7 @@ const NavBar = () =>{
         <CardWidget/>
 
             </li>
-            <li>Inicio</li>
-            <li>Imagenes</li>
+            <li>Productos</li>
             <li>Sobre Nosotros</li>
             <li>Contacto</li>
         </ul>
