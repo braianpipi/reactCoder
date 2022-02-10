@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText} from 'reactstrap';
-import ItemCount from '../../ItemCount';
+import ItemCount from './ItemCount';
 
 const Item = ({data}) => {
   return (<div>
+      
     <Card>
       <CardImg
         alt="Card image cap"
@@ -18,7 +19,7 @@ const Item = ({data}) => {
           className="mb-2 text-muted"
           tag="h6"
         >
-          {data.price}$
+          {data.price}$ 
         </CardSubtitle>
         <CardText>
           {data.description}
@@ -27,6 +28,7 @@ const Item = ({data}) => {
         <ItemCount/>
       </CardBody>
     </Card>
+
           </div>
   )}
 
