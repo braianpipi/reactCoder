@@ -6,8 +6,9 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Home from "./Views/Home";
 import Contact from "./Views/Contact";
 import Category from "./Views/Category";
-import ItemDetail from "./components/ItemDetail/ItemDetail";
 import Error from "./Views/Error";
+// import ItemDetailView from "./Views/ItemDetailView"
+import ItemDetail from "./components/ItemDetail/ItemDetail";
 
 class App extends Component {
   render() {

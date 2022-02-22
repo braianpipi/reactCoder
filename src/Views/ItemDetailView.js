@@ -1,34 +1,35 @@
-import React from "react";
+import React from 'react'
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText} from 'reactstrap';
-import ItemCount from "../../ItemCount";
+import ItemCount from '../components/Item/ItemCount';
+import "../components/Item/Item.css";
 
-const ItemListContainer = ({nombre, precio, descripcion, img}) => {
+const ItemDetailView = ({data}) => {
   return (<div>
-
+      
     <Card>
-      <CardImg
+      <CardImg className="imagenCard"
         alt="Card image cap"
-        src={img}
-        width="20px"
+        src={data.image}
         />
       <CardBody>
         <CardTitle tag="h5">
-          {nombre}
+          {data.title}
         </CardTitle>
         <CardSubtitle
           className="mb-2 text-muted"
           tag="h6"
         >
-          {precio}
+          {data.price}$ 
         </CardSubtitle>
         <CardText>
-          {descripcion}
+          {data.description}
           </CardText>
 
         <ItemCount/>
       </CardBody>
     </Card>
+
           </div>
   )}
 
-export default ItemListContainer;
+export default ItemDetailView;

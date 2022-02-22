@@ -5,7 +5,7 @@ export default function Error() {
     return (
         <div>
             <p>
-                Hubo un incombeniente , Por Favor Dirigite a nuestro <Link to="/">Inicio
+                Hubo un problema, Por Favor Dirigite a nuestro <Link to="/">Inicio
                 </Link>
             </p>
         </div>

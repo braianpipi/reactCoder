@@ -1,15 +1,15 @@
 import React from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText} from 'reactstrap';
 import ItemCount from './ItemCount';
+import "./Item.css";
 
 const Item = ({data}) => {
   return (<div>
       
     <Card>
-      <CardImg
+      <CardImg className="imagenCard"
         alt="Card image cap"
         src={data.image}
-        width="20px"
         />
       <CardBody>
         <CardTitle tag="h5">
