@@ -22,8 +22,8 @@ const ItemList = () => {
     <div>
       {Items.map((item) => {
         return (
-          <div>
-            {isLoading ? <SpinnerLoad /> : <Link to={`/detail/${item.id}`} ><Item key={item.id} data={item} /></Link>}
+          <div key={item.id} >
+            {isLoading ? <SpinnerLoad /> : <Link to={`/detail/${item.id}`} ><Item data={item} /></Link>}
           </div>
         );
       })}

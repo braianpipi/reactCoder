@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
-// import Item from "../Item/Item";
-import ItemDetailView from "../../Views/ItemDetailView"
+import Item from "../Item/Item";
+// import ItemDetailView from "../../Views/ItemDetailView"
 
 function ItemDetail() {
   const [Product, setProduct] = useState([]);
@@ -17,18 +17,11 @@ function ItemDetail() {
     );
 
   }, [productID]);
-
   return (
-    <div>
-      {Product.map((item) => {
-        return (
-          <div key={item.id}>
-            <ItemDetailView  data={item} />
+          <div key={Product.id}>
+            <Item  data={Product} />
           </div>
         );
-      })}
-    </div>
-  );
 }
 
 export default ItemDetail;
