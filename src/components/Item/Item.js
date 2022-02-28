@@ -23,15 +23,20 @@ const Item = ({ data }) => {
   return (
     <div>
       <Card className="imagenCard">
-        <CardImg  alt="Card image cap" src={data.image} />
+        <CardImg  alt="Card image cap" src={data.img} />
         <CardBody>
           <Link to={`/detail/${data.id}`}>
-            <CardTitle tag="h5">{data.title}</CardTitle>
+            <CardTitle tag="h5">{data.nombre}</CardTitle>
           </Link>
           <CardSubtitle className="mb-2 text-muted" tag="h6">
             {data.price}$
           </CardSubtitle>
-          <CardText>{data.description}</CardText>
+          <CardText>{data.descripcion}</CardText>
+          {/* <button onClick={()=>{
+
+          }}>
+            
+          </button> */}
           <Link to={`/detail/${data.id}`}>
             <CardText>Mas detalles</CardText>
           </Link>
