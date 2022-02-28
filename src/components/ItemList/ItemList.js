@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Item from "../Item/Item";
 import axios from "axios";
 import SpinnerLoad from "./Spinner";
-import { Link } from "react-router-dom";
+
 
 
 const ItemList = () => {
@@ -23,7 +23,7 @@ const ItemList = () => {
       {Items.map((item) => {
         return (
           <div key={item.id} >
-            {isLoading ? <SpinnerLoad /> : <Link to={`/detail/${item.id}`} ><Item data={item} /></Link>}
+            {isLoading ? <SpinnerLoad /> : <Item data={item} />}
           </div>
         );
       })}
@@ -32,3 +32,4 @@ const ItemList = () => {
 };
 
 export default ItemList;
+
