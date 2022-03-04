@@ -1,5 +1,25 @@
-.imagenCard{
-    width: 20%;
-    height: 25%;
-    border-radius: 15%;    
+.cardPosicion{
+    margin: 10px 10px 10px 10px;
+}
+.card:hover{
+    box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0,273) !important;
+    transition: all 0,5s linear;
+}
+.card-body{
+    padding: 2rem 0 !important;
+
+}
+.card-text{
+    padding:0.3rem 1rem;
+    font-size:1rem;
+}
+.overflow{
+     overflow: hidden;
+
+}
+.card-img-top{
+    transition: all 0.2s ease-in-out;
+}
+.card-img-top:hover{ 
+transform:scale(1.5)
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Contact() {
+function Cart() {
   return (<div>
     <p>Lorem ushdiUDBFIUsbf Da dhUDN  BDC zixCH bzc P DOh oi D
        ñdff ÑD ñdf  
@@ -8,4 +8,4 @@ function Contact() {
   </div>);
 }
 
-export default Contact;
+export default Cart;

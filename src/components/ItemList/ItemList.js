@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Item from "../Item/Item";
 // import axios from "axios";
 import SpinnerLoad from "./Spinner";
+import "../Item/ItemCount.css";
 
 // const ItemList = () => {
 //   const [Items, setItems] = useState([]);
@@ -29,7 +30,7 @@ import SpinnerLoad from "./Spinner";
 //   );
 // };
 
-import { collection, query, getDocs } from 'firebase/firestore'
+import { collection, query, getDocs } from "firebase/firestore";
 import { db } from "../../Firebase/Firebase";
 
 const ItemList = () => {
@@ -53,14 +54,16 @@ const ItemList = () => {
     getProducts();
   }, []);
   return (
-    <div>
-      {productsData.map((item) => {
-        return (
-          <div key={item.id}>
-            {isLoading ? <SpinnerLoad /> : <Item data={item} />}
-          </div>
-        );
-      })}
+    <div className="container d-flex justify-content-center align-items-center multicard">
+      <div className="row">
+        {productsData.map((item) => {
+          return (
+            <div className="col-md-3" key={item.id}>
+              {isLoading ? <SpinnerLoad /> : <Item data={item} />}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

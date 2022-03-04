@@ -3,54 +3,58 @@ import React, { useState } from "react";
 import "./ItemCount.css";
 import { Link } from "react-router-dom";
 
-const ItemCount =({initial, stock, onAdd})=>{
+const ItemCount = ({ initial, stock, onAdd }) => {
   const [qty, setQty] = useState(initial);
   // const [showButton, setShowButton] = useState(false);
-
-
 
   const addProduct = (num) => {
     setQty(qty + num);
   };
 
   return (
-
-    <div>
-      <div>
-        <button onClick={(e)=> addProduct(-1)}
-        disabled={qty === initial ? true : null}>
-        -
-        </button>
-      <span>{qty}</span>
-      <button onClick={(e)=> addProduct(+1)}
-      disabled={qty === stock ? true : null}>
-        +
-      </button>
+    <div className="container">
+      <div className="row justify-content-center ">
+        <h6 className=" text-secondary">Stock :{stock}</h6>
+        <div className="btn-group text-center justify-content-center p-2 ">
+          <button
+            className="btn-outline-danger "
+            onClick={(e) => addProduct(-1)}
+            disabled={qty === initial ? true : null}
+          >
+            -
+          </button>
+          <p className="text-light m-2">{qty}</p>
+          <button
+            className="btn-outline-success p-2"
+            onClick={(e) => addProduct(+1)}
+            disabled={qty === stock ? true : null}
+          >
+            +
+          </button>
         </div>
-    <button onClick={(e)=>{onAdd(qty)}}
-    disabled={stock===0 ? true : null}>
-      Añadir
-    </button>
-    <Link to={"/cart"} >Finalizar compra</Link>
-  
+        <div className="p-2">
+          <button
+            className="btn-primary "
+            onClick={(e) => {
+              onAdd(qty);
+            }}
+          
+            disabled={stock === 0 ? true : null}
+          >
+            Añadir al Carrito
+          </button>
+          <div className="p-2">
+            <Link to={"/cart"}>
+              <h4 className="btn btn-success">Finalizar Compra</h4>
+            </Link>
+            </div>
+        </div>
+      </div>
     </div>
-    
-    
-    
-    );
-  };
+  );
+};
 
 export default ItemCount;
-
-
-
-
-
-
-
-
-
-
 
 // export const ItemCountContext = createContext();
 
@@ -98,5 +102,5 @@ export default ItemCount;
 // };
 
 // export const ItemCountProvider=()=>{
-//   return <ItemCountContext.Provider>{ItemCount()}</ItemCountContext.Provider> 
+//   return <ItemCountContext.Provider>{ItemCount()}</ItemCountContext.Provider>
 // };

@@ -5,14 +5,20 @@ import Cart from "../Views/Cart";
 import Category from "../Views/Category";
 import Error from "../Views/Error";
 import ItemDetail from "../components/ItemDetail/ItemDetail";
+import Header from "../components/Header/Header";
+import Contact from "../Views/Contact";
+
+
 const AppRouter = () => {
   return (
     <Router>
+      <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category" element={<Category />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/detail/:id" element={<ItemDetail />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/*" element={<Error />} />
       </Routes>
     </Router>
