@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router";
 import Item from "../Item/Item";
 
-import Header from "../Header/Header";
+
 
 // import ItemDetailView from "../../Views/ItemDetailView"
 
@@ -20,11 +20,9 @@ function ItemDetail() {
 
   }, [productID]);
   return (
-          <div>
-            <Header/>
+          
           <div key={Product.id}>
             <Item  data={Product} />
-          </div>
           </div>
         );
 }
