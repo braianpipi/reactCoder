@@ -29,14 +29,16 @@ const Category = () => {
   }, [category]);
 
   return (
-    <div>
+    <div className="container d-flex justify-content-center align-items-center multicard">
+      <div className="row">
       {productCategoryData.map((data) => {
         return (
           <div className="col-md-3" key={data.id}>
-            {isLoading ? <SpinnerLoad /> : <Item productCategoryData={data} />}
+            {isLoading ? <SpinnerLoad /> : <Item data={data} />}
           </div>
         );
       })}
+    </div>
     </div>
   );
 };

@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 // import { Button } from "reactstrap";
 import "./ItemCount.css";
 import { Link } from "react-router-dom";
 
-const ItemCount = ({ initial, stock, onAdd }) => {
-  const [qty, setQty] = useState(initial);
-  // const [showButton, setShowButton] = useState(false);
+const ItemCount = ({ stock, items, onAdd, onLess, onAddCart, data })=> {
 
-  const addProduct = (num) => {
-    setQty(qty + num);
-  };
+  // const [showButton, setShowButton] = useState(false);
 
   return (
     <div className="container">
@@ -18,27 +14,24 @@ const ItemCount = ({ initial, stock, onAdd }) => {
         <div className="btn-group text-center justify-content-center p-2 ">
           <button
             className="btn-outline-danger "
-            onClick={(e) => addProduct(-1)}
-            disabled={qty === initial ? true : null}
+            onClick={onLess}
+            disabled={items === 1 ? true : null}
           >
             -
           </button>
-          <p className="text-light m-2">{qty}</p>
+          <p className="text-light m-2">{items}</p>
           <button
             className="btn-outline-success p-2"
-            onClick={(e) => addProduct(+1)}
-            disabled={qty === stock ? true : null}
+            onClick={onAdd}
+            disabled={items === stock ? true : null}
           >
             +
           </button>
         </div>
         <div className="p-2">
           <button
-            className="btn-primary "
-            onClick={(e) => {
-              onAdd(qty);
-            }}
-          
+            onClick={() => onAddCart(data.nombre, data.precio, data.id, data.img, data.stock)}
+            className='btn-primary'
             disabled={stock === 0 ? true : null}
           >
             Añadir al Carrito
