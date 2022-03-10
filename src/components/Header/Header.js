@@ -1,14 +1,19 @@
 import React from "react";
 import "./Header.css";
-import img from "./logo.jpeg";
+import img from "./cincominions.jpg";
 import NavBar from "../NavBar/Navbar";
-
+import "./Header.css";
 const Header = () => {
   return (
     <div clasname="Header">
-      <img src={img} alt="Logo de la pagina" width={50} />
         <NavBar />
-
+      <div className="container imagenNavBar">
+        <img
+          src={img}
+          alt="Logo de la pagina"
+          className="d-inline-block align-top "
+        />
+      </div>
     </div>
   );
 };

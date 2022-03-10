@@ -7,11 +7,10 @@ import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 const NavBar = () => {
   return (
     <Navbar bg="light" expand="lg">
-      <CartWidget />
+      
       <Container>
         <Navbar.Brand>
           Minion Card Shop
-          
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -33,6 +32,7 @@ const NavBar = () => {
           </Nav>
         </Navbar.Collapse>
       </Container>
+        <CartWidget />
     </Navbar>
   );
 };

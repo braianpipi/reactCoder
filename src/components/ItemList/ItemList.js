@@ -54,6 +54,9 @@ const ItemList = () => {
     getProducts();
   }, []);
   return (
+    <main>
+
+    <h1 className="tituloCartas">Nuestros Mejores Cartas <i class="fa-solid fa-capsules"></i></h1>
     <div className="container d-flex justify-content-center align-items-center multicard">
       <div className="row">
         {productsData.map((item) => {
@@ -65,6 +68,7 @@ const ItemList = () => {
         })}
       </div>
     </div>
+        </main>
   );
 };
 
