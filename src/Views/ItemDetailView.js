@@ -8,8 +8,8 @@ import {
   documentId,
 } from "firebase/firestore";
 import { db } from "../Firebase/Firebase";
-import Item from "../components/Item/Item";
 import SpinnerLoad from "../components/ItemList/Spinner";
+import ItemDetail from "../components/ItemDetail/ItemDetail";
 const ItemDetailView = () => {
   const [productData, setProductData] = useState([]);
   const { id } = useParams();
@@ -39,7 +39,7 @@ const ItemDetailView = () => {
       {productData.map((data) => {
         return (
           <div className="" key={data.id}>
-            {isLoading ? <SpinnerLoad /> : <Item data={data} />}
+            {isLoading ? <SpinnerLoad /> : <ItemDetail data={data} />}
           </div>
         );
       })}

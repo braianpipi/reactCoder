@@ -7,32 +7,29 @@ import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 const NavBar = () => {
   return (
     <Navbar bg="light" expand="lg">
-      
       <Container>
-        <Navbar.Brand>
-          Minion Card Shop
-        </Navbar.Brand>
+        <Navbar.Brand>Minion Card Shop</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link>
-              <Link to="/">Home</Link>
+              <Link className="subrayado" to="/">Home</Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/contact">Contacto</Link>
+              <Link className="subrayado" to="/contact">Contacto</Link>
             </Nav.Link>
-            <NavDropdown title="Categorias" id="basic-nav-dropdown">
+            <NavDropdown title="Categorias" id="collasible-nav-dropdown">
               <NavDropdown.Item>
-                <Link to="/category/accion">Accion</Link>
+                <Link  className="subrayado" to="/category/accion">Accion</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link to="/category/diversion">Diversion</Link>
+                <Link className="subrayado" to="/category/diversion">Diversion</Link>
               </NavDropdown.Item>
             </NavDropdown>
+            <CartWidget />
           </Nav>
         </Navbar.Collapse>
       </Container>
-        <CartWidget />
     </Navbar>
   );
 };

@@ -36,3 +36,16 @@ background-color: rgb(255, 251, 13);}
     transform: rotate(360deg);
   }
 }
+
+
+.medidaTabla{
+  max-width: 55%;
+}
+.medidaTablaDos{
+  max-width: 40%;
+  display: flex;
+  justify-content: center;
+}
+.subrayado{
+  text-decoration: none;
+}

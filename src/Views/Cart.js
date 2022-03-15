@@ -1,8 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { CartContext } from "../components/CartContext/CartContex";
+import "../components/Item/Item.css";
 // import ItemCount from "../components/Item/ItemCount";
 import { Link } from "react-router-dom";
-
+import "../App.css";
+import { Table, Alert } from "react-bootstrap";
 const Cart = () => {
   const { addedProducts, total, deleteProduct, clearAll, countTotal } =
     useContext(CartContext);
@@ -13,66 +15,114 @@ const Cart = () => {
 
   if (total === 0) {
     return (
-      <div className="messageIfNoItems">
-        <p className="noItems">There are no items selected</p>
-        <Link to="/" className="backHomeSign">
-          Go back to Home
-        </Link>
+      <div className="justify-content-center">
+        <Alert variant="danger">
+          <Alert.Heading>
+            <p>
+              Por el momento no hay Productos
+              <i class="fa-solid fa-face-sad-cry"></i>
+            </p>
+          </Alert.Heading>
+          <Link to="/" className="subrayado">
+            Mira todas las cartas hermosa que tenes para vos! <i class="fa-solid fa-face-laugh-beam"></i>
+          </Link>
+        </Alert>
       </div>
     );
   } else {
     return (
       <>
         <div className="card cardPosicion animate__animated animate__flip text-center bg-dark  ">
-          <div className="overflow">
-            {addedProducts.map((product) => {
-              return (
-                <div
-                  key={product.id}
-                  className="col-sm-12 col-md-6 col-lg-4 col-xxl-3"
-                >
-                  <div
-                    className="card cardContainer"
-                    style={{ width: "18rem" }}
-                  >
-                    <div className="imageContainer">
-                      <img
-                        src={product.img}
-                        className="card-img-top"
-                        alt={product.nombre}
-                      />
-                    </div>
-                    <div className="card-body cardBodyContainer">
-                      <h3 className="card-title">{product.nombre}</h3>
-                      <h4 className="card-text text-secondary text-light">
-                        ${product.precio}
-                      </h4>
-                      <h5 className="card-text text-center">
-                        Quantity: {product.quantity}
-                      </h5>
-                    </div>
+          <div className="overflow d-flex justify-content-center">
+            <Table
+              className="medidaTabla"
+              striped
+              bordered
+              hover
+              variant="dark"
+            >
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Nombre</th>
+                  <th>Cantidad</th>
+                  <th>Precio</th>
+                  <th>
+                    <i className="fa-solid fa-close"></i>
+                  </th>
+                </tr>
+              </thead>
+              {addedProducts.map((product) => {
+                return (
+                  <tbody key={product.id}>
+                    <tr>
+                      <td>
+                        <img
+                          src={product.img}
+                          className="card-img-top"
+                          max-width={10}
+                          height={200}
+                          alt={product.nombre}
+                        />
+                      </td>
+                      <td>
+                        <h3 className="card-title text-primary">
+                          {product.nombre}
+                        </h3>
+                      </td>
+                      <td>
+                        <h5 className="card-text text-center">
+                          Cantidad: {product.quantity}
+                        </h5>
+                      </td>
+                      <td>
+                        <h4 className="card-text text-secondary text-bg">
+                          ${product.precio}
+                        </h4>
+                      </td>
+                      <td>
+                        <button
+                          className="btn-light"
+                          onClick={() => deleteProduct(product.nombre)}
+                        >
+                          <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                );
+              })}
+            </Table>
+
+            <Table className="medidaTablaDos">
+              <tbody>
+                <tr>
+                  <td colSpan={1} className="text-light">
+                    Total
+                  </td>
+                  <td colSpan={1} className="text-light">
+                    {total}$
+                  </td>{" "}
+                </tr>
+                <tr>
+                  <td>
                     <button
-                      className="deleteButton1"
-                      onClick={() => deleteProduct(product.nombre)}
+                      rowSpan={1}
+                      onClick={clearAll}
+                      className="btn-danger"
                     >
-                      Delete
+                      Eliminar todas
                     </button>
-                  </div>
-                </div>
-              );
-            })}
+                  </td>
+                  <td rowSpan={1}>
+                    <Link to="/form" className="subrayado">
+                      <button className="btn-success">Terminar Compra</button>
+                    </Link>
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
           </div>
-        </div>
-        <div className="total">
-          <p>Total: {total}</p>
-        </div>
-        <div className="d-flex justify-content-center deleteAllOrFinish">
-          <button onClick={clearAll} className="deleteButton2">
-            Delete all
-          </button>
-          <Link to="/form">
-            <button className="finishButton">Finish purchase</button>
-          </Link>
         </div>
       </>
     );
