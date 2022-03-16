@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import CartProvider from "./components/CartContext/CartContex";// import { ItemCountProvider } from "./components/Item/ItemCount";
+import CartProvider from "./components/CartContext/CartContex"; // import { ItemCountProvider } from "./components/Item/ItemCount";
 import AppRouter from "./Routes/AppRouter";
-import "./App.css"
+import "./App.css";
 class App extends Component {
   render() {
     return (

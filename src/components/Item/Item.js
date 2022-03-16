@@ -55,7 +55,6 @@ const Item = ({ data }) => {
     setAddedProducts([...addedProducts]);
   };
 
-
   return (
     <div className="card cardPosicion animate__animated animate__flip text-center bg-dark  ">
       <div className="overflow">
@@ -76,7 +75,9 @@ const Item = ({ data }) => {
       </div>
       {cartAdd ? (
         <Link to="/cart" className="buttonContainer">
-          <Button variant="success" size="lg">Ir al carrito<i class="fa-solid fa-check-to-slot"></i> </Button>
+          <Button variant="success" size="lg">
+            Ir al carrito<i class="fa-solid fa-check-to-slot"></i>{" "}
+          </Button>
         </Link>
       ) : (
         <ItemCount

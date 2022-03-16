@@ -115,7 +115,7 @@ const Cart = () => {
                     </button>
                   </td>
                   <td rowSpan={1}>
-                    <Link to="/form" className="subrayado">
+                    <Link to="/Contact" className="subrayado">
                       <button className="btn-success">Terminar Compra</button>
                     </Link>
                   </td>
