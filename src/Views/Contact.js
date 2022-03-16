@@ -6,9 +6,9 @@ import { CartContext } from '../components/CartContext/CartContex';
 import FinalMessage from "../components/FinalMessage/FinalMessage";
 import { Button } from 'react-bootstrap';
 const initialState= {
-  nombre: "",
-  apellido: "",
-  Email: ""
+  name: "",
+  lastName: "",
+  address: ""
 }
 const Contact = () => {
 
@@ -19,19 +19,19 @@ const Contact = () => {
   const [purchaseId, setPurchaseId] = useState('');
 
   //capturo la fecha para pasarla despues al docRef y que me de esa info en firebase
-  const f = new Date();
-  let fecha = `${f.getDate()}/${1 + f.getMonth()}/${f.getFullYear()}`
+  const d = new Date();
+  let date = `${d.getDate()}/${1 + d.getMonth()}/${d.getFullYear()}`
 
   //Tomo los valores de los campos del form
   const getValues = (e) => {
-      const {value, nombre} = e.target;
-      setValues({...values, [nombre]: value});
+      const {value, name} = e.target;
+      setValues({...values, [name]: value});
   }
 
   const submit = async (e) => {
       e.preventDefault();
       const docRef = await addDoc(collection(db, "purchases"), {
-          buyer: values, items: addedProducts, fecha: fecha, total: total
+          buyer: values, items: addedProducts, date: date, total: total
       });
       setPurchaseId(docRef.id);
       setValues(initialState);
@@ -49,15 +49,15 @@ const Contact = () => {
     <div className='container'>
         <form className="form" onSubmit={submit}>
             <div className="form-floating mb-3 inputContainer">
-                <input type="text" nombre="nombre" value={values.nombre} onChange={getValues} className="form-control" id="floatingName" placeholder="Name" />
+                <input type="text" name="name" value={values.name} onChange={getValues} className="form-control" id="floatingName" placeholder="Name" />
                 <label htmlFor="floatingName">Name</label>
             </div>
             <div className="form-floating mb-3 inputContainer">
-                <input type="text" nombre="apellido" value={values.apellido} onChange={getValues} className="form-control" id="floatingLastName" placeholder="Last nombre" />
-                <label htmlFor="floatingLastName">Last nombre</label>
+                <input type="text" name="lastName" value={values.lastName} onChange={getValues} className="form-control" id="floatingLastName" placeholder="Last name" />
+                <label htmlFor="floatingLastName">Last name</label>
             </div>
             <div className="form-floating mb-3 inputContainer">
-                <input type="text" nombre="Email" value={values.Email} onChange={getValues} className="form-control" id="floatingAddress" placeholder="Address" />
+                <input type="text" name="address" value={values.address} onChange={getValues} className="form-control" id="floatingAddress" placeholder="Address" />
                 <label htmlFor="floatingAddress">Email</label>
             </div>
             <div className='container'>
