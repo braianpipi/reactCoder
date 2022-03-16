@@ -6,5 +6,9 @@ La idea era buscar un ecormmerce dinamico utilizando Firebase para los productos
 
 La pagina contiene secciones : el Hone, El detalle del producto, una seccion categoria dividida segun la misma, un carrito y un formulario.
 
+<<<<<<< HEAD
 
 Se utilzo react bootstrap para acelerar los estilos.
+=======
+![Minions Card Shop - Google Chrome 2022-03-15 22-35-26](https://user-images.githubusercontent.com/56856475/158501195-9f808471-8733-4365-81a4-d8323961780b.gif)
+>>>>>>> 32591871a54a524e7a08526c187794fab8ed55bc
