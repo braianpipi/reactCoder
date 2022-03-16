@@ -6,3 +6,5 @@ La idea era buscar un ecormmerce dinamico utilizando Firebase para los productos
 
 La pagina contiene secciones : el Hone, El detalle del producto, una seccion categoria dividida segun la misma, un carrito y un formulario.
 
+
+Se utilzo react bootstrap para acelerar los estilos.
